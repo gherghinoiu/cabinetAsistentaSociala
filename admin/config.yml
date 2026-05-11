@@ -2,25 +2,27 @@ backend:
   name: git-gateway
   branch: main
 
-local_backend: true
+# local_backend: true a fost eliminat pentru a permite funcționarea pe Netlify
+# local_backend: true
 
 media_folder: "articole"
 public_folder: "/articole"
 
 collections:
-  - name: "setari"
-    label: "Management Articole"
+  - name: "articole_config"
+    label: "Articole"
     files:
-      - label: "Lista Articole"
+      - label: "Gestionare Articole"
         name: "lista_articole"
         file: "articole/lista-articole.json"
         fields:
-          - label: "Articole"
+          - label: "Listă de Articole (Adaugă aici un articol nou)"
             name: "articole_list"
             widget: "list"
+            summary: "{{fields.title}} ({{fields.date}})"
             fields:
-              - {label: "ID (un cuvânt, ex: pensie-alimentara)", name: "id", widget: "string"}
-              - {label: "Titlu", name: "title", widget: "string"}
+              - {label: "ID (un cuvânt unic, ex: pensie-alimentara)", name: "id", widget: "string"}
+              - {label: "Titlu Articol", name: "title", widget: "string"}
               - {label: "Scurtă descriere", name: "description", widget: "text"}
               - {label: "Data publicării", name: "date", widget: "string", hint: "Ex: 15.05.2026"}
-              - {label: "Fișier Word (.docx)", name: "file", widget: "file"}
+              - {label: "Încarcă Fișierul Word (.docx)", name: "file", widget: "file"}
