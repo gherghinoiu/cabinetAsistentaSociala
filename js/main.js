@@ -86,6 +86,17 @@ function initContactForm() {
             const formData = new FormData(contactForm);
 
             try {
+                // Dacă suntem pe serverul local (ex: Live Server din VS Code), simulăm succesul
+                if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+                    console.log("Formular interceptat local. Date:", Object.fromEntries(formData));
+                    formStatus.textContent = "[TEST LOCAL] Mesajul dumneavoastră ar fi fost trimis cu succes!";
+                    formStatus.classList.add('success');
+                    contactForm.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = "Trimite Mesajul";
+                    return;
+                }
+
                 const response = await fetch(contactForm.action, {
                     method: 'POST',
                     body: formData,

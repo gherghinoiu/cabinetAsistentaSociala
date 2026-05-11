@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: gherghinoiu/cabinetAsistentaSociala
   branch: main
 
 # local_backend: true a fost eliminat pentru a permite funcționarea pe Netlify
