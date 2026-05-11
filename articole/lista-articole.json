@@ -1,0 +1,11 @@
+{
+  "articole_list": [
+    {
+      "id": "exemplu-articol",
+      "title": "Ce presupune o anchetă socială pentru instanță",
+      "description": "Un ghid pas cu pas despre documentele necesare și cum se desfășoară evaluarea.",
+      "date": "11.05.2026",
+      "file": "/articole/exemplu-articol.docx"
+    }
+  ]
+}

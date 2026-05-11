@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Articol | Cristina Dumitran</title>
+  <meta name="description" content="Articol cabinet asistență socială." />
+  <link rel="icon" type="image/x-icon" href="/favicon/favicon.ico" />
+  <link rel="stylesheet" href="/css/style.css" />
+  
+  <!-- Mammoth.js for rendering .docx files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Salt la conținutul principal</a>
+  
+  <div id="header-placeholder"></div>
+  
+  <main id="main-content">
+    <article class="container content-wrapper" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+      <h1 id="article-title" style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Se încarcă...</h1>
+      <p id="article-date" style="color: var(--color-text-light); border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+        Așteptați câteva momente
+      </p>
+      
+      <div id="article-content" class="article-content">
+        <!-- Mammoth va insera HTML-ul aici -->
+        <p>Documentul se procesează...</p>
+      </div>
+
+      <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
+        <a href="/articole/index.html" class="btn btn-outline">← Înapoi la lista de articole</a>
+      </div>
+    </article>
+  </main>
+  
+  <div id="footer-placeholder"></div>
+  
+  <script src="/js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      // Preluăm ID-ul din URL (ex: articol.html?id=exemplu-articol)
+      const urlParams = new URLSearchParams(window.location.search);
+      const articleId = urlParams.get('id');
+      
+      if (!articleId) {
+        document.getElementById('article-content').innerHTML = '<p>Articol negăsit.</p>';
+        document.getElementById('article-title').innerText = 'Eroare';
+        return;
+      }
+
+      try {
+        // Preluăm metadatele din JSON
+        const resList = await fetch('lista-articole.json');
+        const data = await resList.json();
+        const articole = data.articole_list || [];
+        const art = articole.find(a => a.id === articleId);
+
+        if (!art) throw new Error("Metadate articol lipsă");
+
+        // Actualizăm titlul și data
+        document.getElementById('article-title').innerText = art.title;
+        document.getElementById('article-date').innerText = 'Publicat pe: ' + art.date;
+        document.title = art.title + " | Cristina Dumitran";
+        document.querySelector('meta[name="description"]').setAttribute("content", art.description);
+
+        // Preluăm și transformăm fișierul Word (.docx) cu Mammoth.js
+        const resDoc = await fetch(art.file);
+        if (!resDoc.ok) throw new Error("Fișierul Word nu a fost găsit");
+        
+        const arrayBuffer = await resDoc.arrayBuffer();
+        
+        const result = await mammoth.convertToHtml({arrayBuffer: arrayBuffer});
+        document.getElementById('article-content').innerHTML = result.value;
+        
+        if (result.messages.length > 0) {
+            console.warn("Avertismente Mammoth:", result.messages);
+        }
+
+      } catch (e) {
+        document.getElementById('article-content').innerHTML = '<p>A apărut o eroare la procesarea documentului Word. Verificați că fișierul există.</p>';
+        console.error(e);
+      }
+    });
+  </script>
+</body>
+</html>

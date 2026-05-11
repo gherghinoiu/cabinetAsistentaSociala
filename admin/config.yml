@@ -1,0 +1,26 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "articole"
+public_folder: "/articole"
+
+collections:
+  - name: "setari"
+    label: "Management Articole"
+    files:
+      - label: "Lista Articole"
+        name: "lista_articole"
+        file: "articole/lista-articole.json"
+        fields:
+          - label: "Articole"
+            name: "articole_list"
+            widget: "list"
+            fields:
+              - {label: "ID (un cuvânt, ex: pensie-alimentara)", name: "id", widget: "string"}
+              - {label: "Titlu", name: "title", widget: "string"}
+              - {label: "Scurtă descriere", name: "description", widget: "text"}
+              - {label: "Data publicării", name: "date", widget: "string", hint: "Ex: 15.05.2026"}
+              - {label: "Fișier Word (.docx)", name: "file", widget: "file"}
