@@ -6,6 +6,13 @@
       "description": "Un ghid pas cu pas despre documentele necesare și cum se desfășoară evaluarea.",
       "date": "11.05.2026",
       "file": "/articole/exemplu-articol.docx"
+    },
+    {
+      "file": "/articole/perplexity-job-application-instructions-full.docx",
+      "id": "test_perplexity",
+      "title": "test perplexity",
+      "description": "scurta descriere",
+      "date": "15.05.2026"
     }
   ]
 }
