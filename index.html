@@ -44,8 +44,6 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="/css/style.css" />
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-
   <!-- Structured Data -->
   <script type="application/ld+json">
   {
@@ -154,17 +152,6 @@
   <div id="footer-placeholder"></div>
 
   <script src="/js/main.js" defer></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
 </body>
 
 </html>
