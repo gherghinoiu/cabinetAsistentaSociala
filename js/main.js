@@ -14,7 +14,7 @@ async function loadComponents() {
 
     if (headerPlaceholder) {
         try {
-            const response = await fetch('/components/header.html');
+            const response = await fetch('/cabinetAsistentaSociala/components/header.html');
             if (response.ok) {
                 headerPlaceholder.innerHTML = await response.text();
             }
@@ -25,7 +25,7 @@ async function loadComponents() {
 
     if (footerPlaceholder) {
         try {
-            const response = await fetch('/components/footer.html');
+            const response = await fetch('/cabinetAsistentaSociala/components/footer.html');
             if (response.ok) {
                 footerPlaceholder.innerHTML = await response.text();
             }
