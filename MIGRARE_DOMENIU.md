@@ -28,7 +28,8 @@ La acel moment, va trebui să treci prin fișierele de mai jos și să înlocuie
 **3. Secțiunea de Articole**
 - `articole/index.html`
 - `articole/articol.html`
-- *Ce trebuie făcut:* Toate linkurile de design și script trebuie să redevină `/css/style.css`.
+- `articole/lista-articole.json`
+- *Ce trebuie făcut:* Toate linkurile de design și script trebuie să redevină `/css/style.css`, iar în `lista-articole.json` calea `"file": "/cabinetAsistentaSociala/articole/..."` trebuie să redevină `"file": "/articole/..."`.
 
 **4. Logica JavaScript (`js/main.js`)**
 - Funcția `loadComponents()` are acum `fetch('/cabinetAsistentaSociala/components/header.html')`. Trebuie să redevină `fetch('/components/header.html')`.
