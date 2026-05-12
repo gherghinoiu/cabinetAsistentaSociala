@@ -50,8 +50,8 @@
       }
 
       try {
-        // Preluăm metadatele din JSON
-        const resList = await fetch('lista-articole.json');
+        // Preluăm metadatele din JSON (cu cache buster pentru GitHub Pages)
+        const resList = await fetch('lista-articole.json?v=' + new Date().getTime());
         const data = await resList.json();
         const articole = data.articole_list || [];
         const art = articole.find(a => a.id === articleId);

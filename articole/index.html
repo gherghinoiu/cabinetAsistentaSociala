@@ -36,7 +36,7 @@
     document.addEventListener('DOMContentLoaded', async () => {
       const container = document.getElementById('articles-container');
       try {
-        const res = await fetch('lista-articole.json');
+        const res = await fetch('lista-articole.json?v=' + new Date().getTime());
         if (!res.ok) throw new Error('Nu am putut încărca articolele.');
         const data = await res.json();
         const articole = data.articole_list || [];
