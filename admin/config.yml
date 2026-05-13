@@ -7,7 +7,7 @@ backend:
 # local_backend: true
 
 media_folder: "articole"
-public_folder: "/cabinetAsistentaSociala/articole"
+public_folder: "/articole"
 
 collections:
   - name: "articole_config"
