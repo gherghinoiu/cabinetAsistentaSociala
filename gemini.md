@@ -200,7 +200,7 @@ The website is a **single-domain, multi-page static site** with this exact struc
 
    ```html
 
-   <link rel="canonical" href="https://www.domain.ro/pagina.html" />
+   <link rel="canonical" href="https://ciasdumitrancristina.ro/pagina.html" />
 
    ```
 
@@ -214,9 +214,9 @@ The website is a **single-domain, multi-page static site** with this exact struc
 
    <meta property="og:description" content="..." />
 
-   <meta property="og:image" content="https://www.domain.ro/images/og-image.jpg" />
+   <meta property="og:image" content="https://ciasdumitrancristina.ro/images/og-image.jpg" />
 
-   <meta property="og:url" content="https://www.domain.ro/pagina.html" />
+   <meta property="og:url" content="https://ciasdumitrancristina.ro/pagina.html" />
 
    <meta property="og:type" content="website" />
 
@@ -268,7 +268,7 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://www.domain.ro/sitemap.xml
+Sitemap: https://ciasdumitrancristina.ro/sitemap.xml
 
 ```
 
@@ -284,7 +284,7 @@ Sitemap: https://www.domain.ro/sitemap.xml
 
   <url>
 
-    <loc>https://www.domain.ro/</loc>
+    <loc>https://ciasdumitrancristina.ro/</loc>
 
     <lastmod>2026-04-09</lastmod>
 
@@ -296,7 +296,7 @@ Sitemap: https://www.domain.ro/sitemap.xml
 
   <url>
 
-    <loc>https://www.domain.ro/servicii.html</loc>
+    <loc>https://ciasdumitrancristina.ro/servicii.html</loc>
 
     <lastmod>2026-04-09</lastmod>
 
@@ -308,7 +308,7 @@ Sitemap: https://www.domain.ro/sitemap.xml
 
   <url>
 
-    <loc>https://www.domain.ro/despre-noi.html</loc>
+    <loc>https://ciasdumitrancristina.ro/despre-noi.html</loc>
 
     <lastmod>2026-04-09</lastmod>
 
@@ -320,7 +320,7 @@ Sitemap: https://www.domain.ro/sitemap.xml
 
   <url>
 
-    <loc>https://www.domain.ro/contact.html</loc>
+    <loc>https://ciasdumitrancristina.ro/contact.html</loc>
 
     <lastmod>2026-04-09</lastmod>
 
@@ -354,11 +354,11 @@ Sitemap: https://www.domain.ro/sitemap.xml
 
   "description": "Cabinet individual de asistență socială acreditat în [Oraș]. Oferim servicii de consiliere socială, anchete sociale, evaluări sociale și supervizare.",
 
-  "url": "https://www.domain.ro",
+  "url": "https://ciasdumitrancristina.ro",
 
   "telephone": "+40-XXX-XXX-XXX",
 
-  "email": "contact@domain.ro",
+  "email": "dumitranc@yahoo.com",
 
   "address": {
 
@@ -402,7 +402,7 @@ Sitemap: https://www.domain.ro/sitemap.xml
 
   ],
 
-  "image": "https://www.domain.ro/images/og-image.jpg",
+  "image": "https://ciasdumitrancristina.ro/images/og-image.jpg",
 
   "priceRange": "$$",
 
@@ -694,7 +694,7 @@ Every page must follow this exact `<head>` structure (fill in page-specific valu
 
   <meta name="description" content="[Page-specific description — max 155 chars]" />
 
-  <link rel="canonical" href="https://www.domain.ro/[page].html" />
+  <link rel="canonical" href="https://ciasdumitrancristina.ro/[page].html" />
 
  
 
@@ -704,9 +704,9 @@ Every page must follow this exact `<head>` structure (fill in page-specific valu
 
   <meta property="og:description" content="[Same as meta description]" />
 
-  <meta property="og:image" content="https://www.domain.ro/images/og-image.jpg" />
+  <meta property="og:image" content="https://ciasdumitrancristina.ro/images/og-image.jpg" />
 
-  <meta property="og:url" content="https://www.domain.ro/[page].html" />
+  <meta property="og:url" content="https://ciasdumitrancristina.ro/[page].html" />
 
   <meta property="og:type" content="website" />
 
@@ -724,7 +724,7 @@ Every page must follow this exact `<head>` structure (fill in page-specific valu
 
   <meta name="twitter:description" content="[Same as meta description]" />
 
-  <meta name="twitter:image" content="https://www.domain.ro/images/og-image.jpg" />
+  <meta name="twitter:image" content="https://ciasdumitrancristina.ro/images/og-image.jpg" />
 
  
 
@@ -1096,9 +1096,9 @@ Throughout this document and in generated code, I need to replace:
 
 | `+40-XXX-XXX-XXX` | +40 727 375 051 |
 
-| `contact@domain.ro` | WillBeAddedLater |
+| `dumitranc@yahoo.com` | WillBeAddedLater |
 
-| `www.domain.ro` | WillBeAddedLater |
+| `ciasdumitrancristina.ro` | WillBeAddedLater |
 
 | `XX.XXXXX` (lat/long) | WillBeAddedLater |
 
