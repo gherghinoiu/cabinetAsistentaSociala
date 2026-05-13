@@ -164,7 +164,7 @@ header {
 /* Hero Section */
 .hero {
   background-color: #1a5276;
-  background-image: linear-gradient(to right, #1a5276 50%, rgba(26, 82, 118, 0.4) 75%), url('/images/hero.png');
+  background-image: linear-gradient(to right, #1a5276 50%, rgba(26, 82, 118, 0.4) 75%), url('/images/hero.webp');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -363,7 +363,7 @@ footer {
 
 @media (max-width: 768px) {
   .hero {
-    background-image: linear-gradient(rgba(26, 82, 118, 0.75), rgba(26, 82, 118, 0.75)), url('/images/hero-mobile.PNG') !important;
+    background-image: linear-gradient(rgba(26, 82, 118, 0.75), rgba(26, 82, 118, 0.75)), url('/images/hero-mobile.webp') !important;
     background-position: center center !important;
     background-size: cover !important;
     text-align: center;
