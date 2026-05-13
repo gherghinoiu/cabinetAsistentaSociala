@@ -50,9 +50,9 @@ function initMobileMenu() {
 
 function setActiveLink() {
     let currentPath = window.location.pathname;
-    // Normalizare path pentru GitHub Pages / Live Server
-    if (currentPath === '/' || currentPath.endsWith('/')) {
-        currentPath += 'index.html';
+    // Normalizare path: eliminăm index.html pentru a potrivi cu href="/" sau href="/articole/"
+    if (currentPath.endsWith('/index.html')) {
+        currentPath = currentPath.replace('/index.html', '/');
     }
     
     const links = document.querySelectorAll('.nav-links a');
