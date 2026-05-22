@@ -1,29 +1,35 @@
 /* CSS Custom Properties */
 :root {
-  --color-primary: #1a5276;     /* Professional dark blue din cerinte */
-  --color-secondary: #2ecc71;   /* Trust green din cerinte */
+  --color-primary: #1a5276;
+  /* Professional dark blue din cerinte */
+  --color-secondary: #2ecc71;
+  /* Trust green din cerinte */
   --color-secondary-hover: #27ae60;
   --color-text: #2c3e50;
   --color-text-light: #5a6c7d;
-  --color-bg: #faf9f6;          /* Warm off-white */
+  --color-bg: #faf9f6;
+  /* Warm off-white */
   --color-surface: #ffffff;
   --color-border: #e2e8f0;
-  
+
   --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-heading: 'Georgia', 'Times New Roman', serif; /* Un font serif pentru a adăuga căldură și profesionalism clasic */
-  
+  --font-heading: 'Georgia', 'Times New Roman', serif;
+  /* Un font serif pentru a adăuga căldură și profesionalism clasic */
+
   --max-width: 1200px;
   --spacing-sm: 0.5rem;
   --spacing-md: 1rem;
   --spacing-lg: 2rem;
   --spacing-xl: 4rem;
-  
+
   --radius: 8px;
   --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 /* Reset & Base */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -42,7 +48,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   font-family: var(--font-heading);
   color: var(--color-primary);
   margin-bottom: var(--spacing-md);
@@ -75,6 +84,7 @@ img {
   padding: 8px;
   z-index: 100;
 }
+
 .skip-link:focus {
   top: 0;
 }
@@ -127,7 +137,8 @@ header {
 }
 
 .nav-links {
-  display: none; /* Mobile first */
+  display: none;
+  /* Mobile first */
 }
 
 .nav-links.active {
@@ -148,7 +159,8 @@ header {
   color: var(--color-text);
 }
 
-.nav-links a:hover, .nav-links a.active {
+.nav-links a:hover,
+.nav-links a.active {
   color: var(--color-secondary);
 }
 
@@ -171,7 +183,8 @@ header {
   color: white;
   padding: var(--spacing-xl) 0;
   text-align: left;
-  min-height: 600px; /* Unificat și mărit conform solicitării */
+  min-height: 400px;
+  /* Unificat și mărit conform solicitării */
   display: flex;
   align-items: center;
   margin-bottom: var(--spacing-xl);
@@ -179,7 +192,8 @@ header {
 
 .hero h1 {
   color: white;
-  font-size: 1.8rem !important; /* Mărime redusă conform solicitării */
+  font-size: 1.8rem !important;
+  /* Mărime redusă conform solicitării */
   margin-bottom: var(--spacing-md);
   max-width: 90%;
   line-height: 1.2;
@@ -191,7 +205,7 @@ header {
 }
 
 .hero .hero-content {
-  max-width: 550px;
+  max-width: 650px;
 }
 
 .hero-btns {
@@ -334,7 +348,9 @@ footer {
   font-size: 1.25rem;
 }
 
-.footer-section p, .footer-section a, .footer-section li {
+.footer-section p,
+.footer-section a,
+.footer-section li {
   color: #e2e8f0;
 }
 
@@ -353,7 +369,7 @@ footer {
 .footer-bottom {
   text-align: center;
   padding-top: var(--spacing-md);
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.875rem;
   color: #cbd5e1;
 }
@@ -367,14 +383,15 @@ footer {
     background-position: center center !important;
     background-size: cover !important;
     text-align: center;
-    min-height: 400px; /* Menținem înălțimea generoasă și pe mobil */
+    min-height: 400px;
+    /* Menținem înălțimea generoasă și pe mobil */
     padding: var(--spacing-xl) 0;
   }
-  
+
   .hero h1 {
     font-size: 1.4rem !important;
   }
-  
+
   .hero .hero-content {
     max-width: 100%;
   }
@@ -401,7 +418,8 @@ footer {
   margin-bottom: var(--spacing-md);
 }
 
-.content-wrapper ul, .content-wrapper ol {
+.content-wrapper ul,
+.content-wrapper ol {
   margin-bottom: var(--spacing-md);
   margin-left: var(--spacing-lg);
 }
@@ -412,15 +430,15 @@ footer {
     display: flex;
     gap: var(--spacing-lg);
   }
-  
+
   .mobile-menu-btn {
     display: none;
   }
-  
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
   }
