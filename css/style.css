@@ -449,3 +449,374 @@ footer {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ==========================================================================
+   Pagina Despre Mine — Stiluri Custom & E-E-A-T
+   ========================================================================== */
+
+/* Grid principal profil */
+.profile-section {
+  padding-bottom: var(--spacing-xl);
+}
+
+.profile-grid {
+  display: flex;
+  flex-direction: column-reverse; /* Pe mobil, poza este afișată deasupra sau dedesubt (aici dedesubt pentru cursivitate, apoi pe desktop stânga-dreapta) */
+  gap: var(--spacing-lg);
+}
+
+.profile-text {
+  flex: 1;
+}
+
+.profile-text .lead {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.6;
+  margin-bottom: var(--spacing-md);
+}
+
+.profile-text p {
+  margin-bottom: var(--spacing-md);
+  color: var(--color-text);
+}
+
+.section-subtitle {
+  font-size: 1.4rem;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 4px;
+}
+
+/* Listă expertiză premium cu bife verzi */
+.expertise-list {
+  list-style: none !important;
+  margin: var(--spacing-md) 0 var(--spacing-lg) 0 !important;
+  padding-left: 0 !important;
+}
+
+.expertise-list li {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.expertise-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 1px;
+  color: var(--color-secondary);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Casetă CTA */
+.cta-block {
+  background-color: var(--color-surface);
+  border-left: 4px solid var(--color-primary);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  margin: var(--spacing-lg) 0;
+  box-shadow: var(--shadow);
+}
+
+.cta-block p {
+  margin-bottom: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+/* Foto de profil dreapta */
+.profile-aside {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.profile-img-card {
+  background: var(--color-surface);
+  padding: 10px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  text-align: center;
+  width: 220px; /* 200px poza + 20px padding stânga-dreapta */
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile-img-caption {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+/* Secțiunea Atestate și Avize */
+.credentials-section {
+  background-color: var(--color-surface);
+  padding: var(--spacing-xl) 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.credentials-section h2 {
+  text-align: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.credentials-section .section-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto var(--spacing-xl) auto;
+  color: var(--color-text-light);
+}
+
+.credentials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Card atestat premium cu micro-animație */
+.credential-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-bg);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow: var(--shadow);
+}
+
+.credential-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08), 0 4px 8px -2px rgba(0, 0, 0, 0.03);
+  border-color: var(--color-secondary);
+}
+
+.credential-img-wrapper {
+  background: #f1f5f9;
+  padding: var(--spacing-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
+  height: 340px;
+  overflow: hidden;
+}
+
+.credential-img-wrapper img {
+  max-height: 100%;
+  width: auto;
+  object-fit: contain;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.credential-card:hover .credential-img-wrapper img {
+  transform: scale(1.04);
+}
+
+.credential-info {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.credential-info h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.credential-info p {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.view-link {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: var(--color-secondary);
+  margin-top: auto;
+  transition: color 0.3s ease;
+}
+
+.credential-card:hover .view-link {
+  color: var(--color-secondary-hover);
+}
+
+/* Responsivitate pentru ecrane medii și mari */
+@media (min-width: 768px) {
+  .profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: var(--spacing-xl);
+    align-items: start;
+  }
+  
+  .profile-aside {
+    justify-content: flex-end;
+  }
+  
+  .credentials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ==========================================================================
+   Servicii, Instituții & Tarife — Grid în 2 Coloane și Linie Punctată Onorarii
+   ========================================================================== */
+
+/* Grid principal pentru Servicii și Instituții */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Card premium pentru fiecare serviciu */
+.service-card {
+  background-color: var(--color-surface);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius);
+  border-left: 4px solid var(--color-primary);
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Pentru ca toate cardurile de pe același rând să aibă aceeași înălțime */
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.service-card.primary-accent {
+  border-left-color: var(--color-primary);
+}
+
+.service-card.secondary-accent {
+  border-left-color: var(--color-secondary);
+}
+
+.service-card h2, .service-card h3 {
+  color: var(--color-primary);
+  margin-top: 0;
+  font-size: 1.25rem !important;
+  margin-bottom: var(--spacing-sm);
+}
+
+.service-card .service-tagline {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.4;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Utilitar lățime extinsă pentru pagini cu grid-uri (Servicii, Instituții, Tarife) */
+.wide-content-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Structură Tarife Card Premium cu accent de culoare și umbră */
+.pricing-category {
+  background-color: var(--color-surface);
+  padding: var(--spacing-lg) !important;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--spacing-lg); /* Spațiere clară și aerisită între grupuri */
+  border-left: 4px solid var(--color-primary);
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.2s ease;
+}
+
+.pricing-category:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Alternare culori de accent pentru categorii de tarife */
+.pricing-category:nth-of-type(even) {
+  border-left-color: var(--color-secondary);
+}
+
+.pricing-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.pricing-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 0.6rem;
+  font-size: 1rem;
+}
+
+.pricing-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-list .service-name {
+  font-weight: 500;
+  text-align: left;
+  padding-right: 0.5rem;
+  color: var(--color-text);
+}
+
+.pricing-list .price-leader {
+  flex-grow: 1;
+  border-bottom: 1px dotted var(--color-border);
+  margin: 0 0.5rem 0.25rem 0.5rem;
+}
+
+.pricing-list .service-price {
+  font-weight: bold;
+  color: var(--color-primary);
+  white-space: nowrap;
+  text-align: right;
+  padding-left: 0.5rem;
+}
+
+/* Adaptare grid pe tablete și desktop */
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+}
