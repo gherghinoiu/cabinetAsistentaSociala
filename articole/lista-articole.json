@@ -1,3 +1,11 @@
 {
-  "articole_list": []
+  "articole_list": [
+    {
+      "id": "rezilienta-si-burnout",
+      "title": "Reziliență și burnout în asistența socială",
+      "description": "În domeniul asistenței sociale, vorbim des despre reziliența beneficiarilor. Mai rar, însă, vorbim despre reziliența celor care ajută. Iar asta creează un dezechilibru tăcut, dar real: profesioniști care susțin zilnic vieți în criză, dar care uită uneori să își mai observe propriile limite.",
+      "date": "25.05.2026",
+      "file": "/articole/Reziliență și burnout în asistența socială.docx"
+    }
+  ]
 }
