@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Articole și Resurse | Cabinet Asistență Socială Cristina Dumitran</title>
-  <meta name="description" content="Articole, noutăți și resurse din domeniul asistenței sociale, redactate de Cristina Dumitran." />
+  <meta name="description"
+    content="Articole, noutăți și resurse din domeniul asistenței sociale, redactate de Cristina Dumitran." />
   <link rel="canonical" href="https://ciasdumitrancristina.ro/articole/index.html" />
   <link rel="icon" type="image/png" href="/favicon/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon/favicon.png" />
   <link rel="stylesheet" href="/css/style.css" />
 </head>
+
 <body>
   <a href="#main-content" class="skip-link">Salt la conținutul principal</a>
-  
+
   <div id="header-placeholder"></div>
-  
+
   <main id="main-content">
     <section class="hero">
       <div class="container">
@@ -24,16 +27,17 @@
         </div>
       </div>
     </section>
-    
+
     <div class="container content-wrapper">
-      <div id="articles-container" class="grid" style="grid-template-columns: 1fr; gap: var(--spacing-lg);">
+      <div id="articles-container" class="grid"
+        style="grid-template-columns: 1fr; gap: var(--spacing-lg); margin-bottom: 25px;">
         <p>Se încarcă articolele...</p>
       </div>
     </div>
   </main>
-  
+
   <div id="footer-placeholder"></div>
-  
+
   <script src="/js/main.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
@@ -43,7 +47,7 @@
         if (!res.ok) throw new Error('Nu am putut încărca articolele.');
         const data = await res.json();
         const articole = data.articole_list || [];
-        
+
         container.innerHTML = '';
         if (articole.length === 0) {
           container.innerHTML = '<p>În curând vom publica primul nostru articol. Vă rugăm să reveniți!</p>';
@@ -55,7 +59,7 @@
           articleEl.className = 'card';
           articleEl.style.padding = 'var(--spacing-md)';
           articleEl.style.borderLeft = '4px solid var(--color-primary)';
-          
+
           articleEl.innerHTML = `
             <h2 style="margin-bottom: var(--spacing-sm);"><a href="articol.html?id=${art.id}">${art.title}</a></h2>
             <p style="color: var(--color-text-light); font-size: 0.9em; margin-bottom: var(--spacing-sm);">
@@ -73,4 +77,5 @@
     });
   </script>
 </body>
+
 </html>
