@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,42 +9,46 @@
   <link rel="icon" type="image/png" href="/favicon/favicon.png" />
   <link rel="apple-touch-icon" href="/favicon/favicon.png" />
   <link rel="stylesheet" href="/css/style.css" />
-  
+
   <!-- Mammoth.js for rendering .docx files -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
 </head>
+
 <body>
   <a href="#main-content" class="skip-link">Salt la conținutul principal</a>
-  
+
   <div id="header-placeholder"></div>
-  
+
   <main id="main-content">
-    <article class="container content-wrapper" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
+    <article class="container content-wrapper"
+      style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl);">
       <h1 id="article-title" style="color: var(--color-primary); margin-bottom: var(--spacing-sm);">Se încarcă...</h1>
-      <p id="article-date" style="color: var(--color-text-light); border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-md); margin-bottom: var(--spacing-lg);">
+      <p id="article-date"
+        style="color: var(--color-text-light); border-bottom: 1px solid var(--color-border); padding-bottom: var(--spacing-md); margin-bottom: var(--spacing-lg);">
         Așteptați câteva momente
       </p>
-      
+
       <div id="article-content" class="article-content">
         <!-- Mammoth va insera HTML-ul aici -->
         <p>Documentul se procesează...</p>
       </div>
 
-      <div style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); border-top: 1px solid var(--color-border);">
+      <div
+        style="margin-top: var(--spacing-xl); padding-top: var(--spacing-lg); margin-bottom: 25px; border-top: 1px solid var(--color-border);">
         <a href="/articole/index.html" class="btn btn-outline">← Înapoi la lista de articole</a>
       </div>
     </article>
   </main>
-  
+
   <div id="footer-placeholder"></div>
-  
+
   <script src="/js/main.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', async () => {
       // Preluăm ID-ul din URL (ex: articol.html?id=exemplu-articol)
       const urlParams = new URLSearchParams(window.location.search);
       const articleId = urlParams.get('id');
-      
+
       if (!articleId) {
         document.getElementById('article-content').innerHTML = '<p>Articol negăsit.</p>';
         document.getElementById('article-title').innerText = 'Eroare';
@@ -68,14 +73,14 @@
         // Preluăm și transformăm fișierul Word (.docx) cu Mammoth.js
         const resDoc = await fetch(art.file);
         if (!resDoc.ok) throw new Error("Fișierul Word nu a fost găsit");
-        
+
         const arrayBuffer = await resDoc.arrayBuffer();
-        
-        const result = await mammoth.convertToHtml({arrayBuffer: arrayBuffer});
+
+        const result = await mammoth.convertToHtml({ arrayBuffer: arrayBuffer });
         document.getElementById('article-content').innerHTML = result.value;
-        
+
         if (result.messages.length > 0) {
-            console.warn("Avertismente Mammoth:", result.messages);
+          console.warn("Avertismente Mammoth:", result.messages);
         }
 
       } catch (e) {
@@ -85,4 +90,5 @@
     });
   </script>
 </body>
+
 </html>
